@@ -2070,16 +2070,16 @@ document.getElementById("generate-button").addEventListener("click", () => {
 });
 
 // Copy generated words
+// Copy generated words
 document.getElementById("copy-button").addEventListener("click", () => {
-    const wordContainer = document.getElementById("random-words");
-    const words = [];
-    wordContainer.childNodes.forEach((child) => {
-      words.push(child.textContent);
-    });
-    const text = words.join(", ");
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Words copied to clipboard!");
-    });
+  const wordContainer = document.getElementById("random-words");
+  const words = [];
+  wordContainer.childNodes.forEach((child) => {
+    words.push(child.textContent);
   });
-  
-  
+  // Join the words with a space instead of a comma
+  const text = words.join(" ");
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Words copied to clipboard!");
+  });
+});
